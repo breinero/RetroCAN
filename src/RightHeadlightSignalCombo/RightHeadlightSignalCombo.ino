@@ -1,5 +1,4 @@
-#include <Serial_CAN_Module.h>
-#include <SoftwareSerial.h>
+#include <RetroCAN.h>
 
 Serial_CAN can;
 

@@ -1,6 +1,4 @@
-#include <Serial_CAN_Module.h>
-
-Serial_CAN can;
+#include <RetroCAN.h>
 
 // Pin assignments 
 // analog pin used to connect the fuel float potentiometer
@@ -13,13 +11,13 @@ int sleepInterval = 5000;
 
 int lastMeasurement = 0;
 
-int nodeID = 0x04;
+int nodeID = network.fuelSender;
 
 void setup() {
   Serial.begin(9600);
   while(!Serial);
 
-  can.begin(can_tx, can_rx, 9600);
+  //can.begin(can_tx, can_rx, 9600);
 }
 
 void loop() {
@@ -31,6 +29,6 @@ void loop() {
     (unsigned char)measurement, 
     isEmpy
   };
-  can.send( nodeID, 0, 0, 2, dta );
+  //can.send( nodeID, 0, 0, 2, dta );
   delay(sleepInterval);                           // waits for the servo to get there
 }

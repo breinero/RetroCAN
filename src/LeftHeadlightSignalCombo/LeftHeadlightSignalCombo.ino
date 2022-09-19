@@ -1,8 +1,4 @@
-#include <Serial_CAN_Module.h>
-#include <SoftwareSerial.h>
-
-Serial_CAN can;
-
+#include "../RetroCAN.h"
 // driver side headlight and signal unit
 const int listenToNode = 0x02;
 
@@ -24,7 +20,7 @@ void setup() {
   
   Serial.begin(9600);
   while (!Serial);
-  can.begin( transmit, recieve, 9600);
+  //can.begin( transmit, recieve, 9600);
 
   Serial.println("CAN Receiver v2: driver side headlight and signal unit");
 }
